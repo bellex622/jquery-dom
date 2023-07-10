@@ -80,9 +80,9 @@
     // Add your code here!
     //1.
     let $img = $("article img");
-    $img.addClass(".image-center");
+    $img.addClass("image-center");
     //2.
-    let $lastP = $("article:nth-child(6) ");
+    let $lastP = $("article:last-child");
     $lastP.remove();
     //3.
     let $title = $("#title");
@@ -93,6 +93,21 @@
     //5.
     let $aside = $("aside");
     $aside.empty().append("<p>apology!</p>")
+    //6.
+    let $body = $("body");
+    $body.on("change", cb);
+    function changeBackgroundColor(evt) {
+      let $red = $();
+      let $blue = $();
+      let $green = $();
+      $body.css("background-color",)
+    }
+
+
+    //7.
+    $img.on("click", function() {
+      $img.remove();
+    })
 
 
 
