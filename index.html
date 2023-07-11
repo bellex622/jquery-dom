@@ -82,8 +82,9 @@
     let $img = $("article img");
     $img.addClass("image-center");
     //2.
-    let $lastP = $("article:last-child");
+    let $lastP = $("p:last-of-type");//article p:last-child
     $lastP.remove();
+
     //3.
     let $title = $("#title");
     let randomSize = Math.floor(Math.random() * 101);
@@ -92,20 +93,24 @@
     $("ol").append("<li>new list item</li>");
     //5.
     let $aside = $("aside");
-    $aside.empty().append("<p>apology!</p>")
+    $aside.empty().append("<p>apology!</p>");
     //6.
     let $body = $("body");
-    $body.on("change", cb);
+    $body.on("change", changeBackgroundColor);
     function changeBackgroundColor(evt) {
-      let $red = $();
-      let $blue = $();
-      let $green = $();
-      $body.css("background-color",)
+      let $input = $(".form-control");
+      $body.css("backgroundColor", `rgb(${$input[0].value},${$input[1].value},${$input[2].value})`);
+      //use .eq
+      console.log($input[0].value);
+      console.log($input[1].value);
+      console.log($input[2].value);
     }
 
 
+
+
     //7.
-    $img.on("click", function() {
+    $img.on("click", function (evt) {
       $img.remove();
     })
 
